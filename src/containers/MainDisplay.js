@@ -5,7 +5,7 @@ import '../Styles/MainDisplay.css'
 function MainDisplay({cookies, setCookies, shortNumber, clicksPerSecond}) {
 
     const handleManualClick = () => {
-        setCookies(cookies + 1000)
+        setCookies(cookies + 1)
     }
 
     return (
