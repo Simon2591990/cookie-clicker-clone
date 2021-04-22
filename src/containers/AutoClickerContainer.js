@@ -47,7 +47,7 @@ function AutoClickerContainer({shortNumber, setCookies, cookies, setClicksPerSec
 
     return (
         <>
-        <Grid container direction='column'>
+        <Grid  container direction='column'>
            {autoClickerNodes}
         </Grid>
         </>

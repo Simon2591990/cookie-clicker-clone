@@ -2,3 +2,8 @@
   width: 30%;
   border-radius: 50%;
 }
+
+#cookie:active {
+  position: relative;
+  top: 1px;
+}

@@ -1,6 +1,6 @@
 import './App.css';
 import Header from './containers/Header';
-import { createMuiTheme, Grid, ThemeProvider } from '@material-ui/core';
+import { Button, createMuiTheme, Grid, ThemeProvider } from '@material-ui/core';
 import MainDisplay from './containers/MainDisplay';
 import AutoClickerContainer from './containers/AutoClickerContainer';
 import { useEffect, useState } from 'react';
@@ -8,10 +8,14 @@ import { useEffect, useState } from 'react';
 
 function App() {
 
+  
+
   //states
   const [cookies, setCookies] = useState(0)
   //divided by 50
   const [clicksPerSecond, setClicksPerSecond] = useState(0.02);
+
+  
 
 
   //theme
@@ -32,19 +36,19 @@ function App() {
     number = Math.round(number)
     
     if (number.toString().length > 15){
-        return parseFloat(Math.round(number / 1000000000000000 * 1000 ) / 1000).toFixed(3)  + " Quadrillion"
+        return parseFloat(Math.round(number / 1000000000000000 * 1000 ) / 1000).toFixed(3)  + " Qua"
     }
     if (number.toString().length > 12){
-        return parseFloat(Math.round(number / 1000000000000 * 1000) / 1000).toFixed(3) + " Trillion"
+        return parseFloat(Math.round(number / 1000000000000 * 1000) / 1000).toFixed(3) + " T"
     }
     if (number.toString().length > 9){
-        return parseFloat(Math.round(number / 1000000000 * 1000) / 1000).toFixed(3) + " Billion"
+        return parseFloat(Math.round(number / 1000000000 * 1000) / 1000).toFixed(3) + " B"
     }
     if (number.toString().length > 6){
-        return parseFloat(Math.round(number / 1000000 * 1000) / 1000).toFixed(3) + " Million"
+        return parseFloat(Math.round(number / 1000000 * 1000) / 1000).toFixed(3) + " M"
     }
     // if (number.toString().length > 4){
-    //     return  parseFloat(Math.round(number / 1000 * 1000 ) / 1000).toFixed(3) + " Thousand"
+    //     return  parseFloat(Math.round(number / 1000 * 1000 ) / 1000).toFixed(3) + " Th"
     // }
     return Math.round(number)
 } 
@@ -52,7 +56,7 @@ function App() {
   //game ticker 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCookies(cookies => cookies + clicksPerSecond)
+      setCookies(cookies  + clicksPerSecond)
       // console.log('tick')
     }, 20 ); 
     return () => clearInterval(interval);
@@ -80,6 +84,7 @@ function App() {
               />
               
           </Grid>
+              
         </Grid>
         
       

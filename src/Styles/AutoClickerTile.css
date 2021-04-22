@@ -13,11 +13,11 @@
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  background-color: greenyellow;
+  background-color: rgb(124, 247, 100);
 }
 .can-afford:hover {
   text-decoration: none;
-  background-color: rgb(175, 248, 66);
+  background-color: rgb(90, 236, 61);
 }
 .can-afford:active {
   position: relative;
@@ -38,4 +38,13 @@
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  background-color: rgb(238, 238, 238);
+}
+.cant-afford:hover {
+  text-decoration: none;
+  background-color: rgb(209, 184, 184);
+}
+.cant-afford:active {
+  position: relative;
+  top: 1px;
 }

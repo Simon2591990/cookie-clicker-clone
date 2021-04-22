@@ -96,12 +96,12 @@ function AutoClickerTile({autoClicker, shortNumber, cookies, setCookies, setClic
     return (
         <>
             <Grid container >
-                <Grid container direction='column' alignItems='stretch' item xs>
+                <Grid  container direction='column' alignItems='stretch' item xs>
                     
                     <button class={rank.color} onClick={handleIncreaseRank} variant='contained'   >
                         <Grid>
                             <p>Rank: {rank.number}</p>
-                            <p>cost: {shortNumber(rank.cost)}</p>
+                            <p>{shortNumber(rank.cost)}</p>
                         </Grid>
                     </button>
                 </Grid>
