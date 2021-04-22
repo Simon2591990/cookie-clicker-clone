@@ -25,7 +25,8 @@ function AutoClickerTile({autoClicker, shortNumber, cookies, setCookies, setClic
         cost: autoClicker.cost,
         clicksPerSecond: autoClicker.clicksPerSecond,
         count: autoClicker.count,
-        color: autoClicker.color
+        color: autoClicker.color,
+        
     })
     const canAffordRank = () => {
         if (cookies >= rank.cost){
@@ -105,20 +106,20 @@ function AutoClickerTile({autoClicker, shortNumber, cookies, setCookies, setClic
                     </button>
                 </Grid>
                 <Grid container direction='column' alignItems='stretch'  item xs={8}>
+                        
+                    <button class={thisClicker.color} onClick={handleBuyClicker} variant='contained' >
                     <Tooltip title={
                         <React.Fragment>
                         <p>CPS: {thisClicker.clicksPerSecond * 50}</p>
                         <p>Total CPS: {shortNumber(thisClicker.count * thisClicker.clicksPerSecond * 50)}</p>
                         </React.Fragment>
                         }>
-                        
-                    <button class={thisClicker.color} onClick={handleBuyClicker} variant='contained' >
                         <Grid >
                             <p>{thisClicker.name}: {thisClicker.count}</p>
                             <p>cost: {shortNumber(thisClicker.cost)}</p>
                         </Grid>
-                    </button>
                     </Tooltip> 
+                    </button>
                 </Grid>
             </Grid>
         

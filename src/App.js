@@ -53,7 +53,7 @@ function App() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCookies(cookies => cookies + clicksPerSecond)
-      console.log('tick')
+      // console.log('tick')
     }, 20 ); 
     return () => clearInterval(interval);
   }, [cookies]);  
