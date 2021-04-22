@@ -31,14 +31,14 @@ function AutoClickerTile({autoClicker, shortNumber, cookies, setCookies, setClic
         if (cookies >= rank.cost){
             setRank(previousRank => {
                 let updatedRank = previousRank;
-                updatedRank.color = 'secondary';
+                updatedRank.color = 'can-afford';
                 return updatedRank
             })
         }
         if (cookies < rank.cost){
             setRank(previousRank => {
                 let updatedRank = previousRank;
-                updatedRank.color = 'default';
+                updatedRank.color = 'cant-afford';
                 return updatedRank
             })
         }
@@ -47,14 +47,14 @@ function AutoClickerTile({autoClicker, shortNumber, cookies, setCookies, setClic
         if (cookies >= thisClicker.cost){
             setThisClicker(previousClicker => {
                 let updatedClicker = previousClicker;
-                updatedClicker.color = 'primary';
+                updatedClicker.color = 'can-afford';
                 return updatedClicker
             })
         }
         if (cookies < thisClicker.cost){
             setThisClicker(previousClicker => {
                 let updatedClicker = previousClicker;
-                updatedClicker.color = 'default';
+                updatedClicker.color = 'cant-afford';
                 return updatedClicker
             })
         }
@@ -62,20 +62,20 @@ function AutoClickerTile({autoClicker, shortNumber, cookies, setCookies, setClic
     
     const handleBuyClicker = () => {
         if ( cookies >= thisClicker.cost){
-            setCookies(cookies => cookies - thisClicker.cost)
+            setCookies(cookies - thisClicker.cost);
             setThisClicker(previousClicker => {
                 let updatedClicker = previousClicker;
                 updatedClicker.cost = Math.round(updatedClicker.cost * 1.3)
                 updatedClicker.count = updatedClicker.count + 1
                 return updatedClicker
                 
-            })
+            });
             setClicksPerSecond(cps => cps + thisClicker.clicksPerSecond)
         }
     }
     const handleIncreaseRank = () => {
         if (cookies >= rank.cost){
-            setCookies(cookies => cookies - rank.cost)
+            setCookies(cookies - rank.cost)
             setClicksPerSecond(clicksPerSecond + (thisClicker.clicksPerSecond * thisClicker.count))
             setRank(previousRank => {
                 let updatedRank = previousRank;
@@ -97,12 +97,12 @@ function AutoClickerTile({autoClicker, shortNumber, cookies, setCookies, setClic
             <Grid container >
                 <Grid container direction='column' alignItems='stretch' item xs>
                     
-                    <Button color={rank.color} onClick={handleIncreaseRank} variant='contained'   >
+                    <button class={rank.color} onClick={handleIncreaseRank} variant='contained'   >
                         <Grid>
                             <p>Rank: {rank.number}</p>
-                            <p>cost: {rank.cost}</p>
+                            <p>cost: {shortNumber(rank.cost)}</p>
                         </Grid>
-                    </Button>
+                    </button>
                 </Grid>
                 <Grid container direction='column' alignItems='stretch'  item xs={8}>
                     <Tooltip title={
@@ -112,12 +112,12 @@ function AutoClickerTile({autoClicker, shortNumber, cookies, setCookies, setClic
                         </React.Fragment>
                         }>
                         
-                    <Button color={thisClicker.color} onClick={handleBuyClicker} variant='contained' >
+                    <button class={thisClicker.color} onClick={handleBuyClicker} variant='contained' >
                         <Grid >
                             <p>{thisClicker.name}: {thisClicker.count}</p>
                             <p>cost: {shortNumber(thisClicker.cost)}</p>
                         </Grid>
-                    </Button>
+                    </button>
                     </Tooltip> 
                 </Grid>
             </Grid>

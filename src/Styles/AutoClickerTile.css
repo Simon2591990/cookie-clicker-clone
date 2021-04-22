@@ -1,3 +1,6 @@
 .can-afford {
-  background-color: greenyellow;
+  background-color: rgb(68, 233, 3);
+}
+.cant-afford {
+  background-color: rgb(209, 209, 209);
 }

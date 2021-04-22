@@ -43,9 +43,9 @@ function App() {
     if (number.toString().length > 6){
         return parseFloat(Math.round(number / 1000000 * 1000) / 1000).toFixed(3) + " Million"
     }
-    if (number.toString().length > 4){
-        return  parseFloat(Math.round(number / 1000 * 1000 ) / 1000).toFixed(3) + " Thousand"
-    }
+    // if (number.toString().length > 4){
+    //     return  parseFloat(Math.round(number / 1000 * 1000 ) / 1000).toFixed(3) + " Thousand"
+    // }
     return Math.round(number)
 } 
   
