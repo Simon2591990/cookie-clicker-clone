@@ -29,7 +29,6 @@ function App() {
       },
     },
   });
-
   // divide number by the affix to get the short number
   // multiyply followed by divide gives the relevent decimal places
   const shortNumber = (number) => {
@@ -57,7 +56,7 @@ function App() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCookies(cookies  + clicksPerSecond)
-      // console.log('tick')
+      console.log('tick')
     }, 20 ); 
     return () => clearInterval(interval);
   }, [cookies]);  
